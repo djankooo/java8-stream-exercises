@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="collection-interfaces" />
+        <module name="common-test-tool" />
+        <module name="date-and-time-api" />
+        <module name="stream-api" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="collection-interfaces" target="1.8" />
+      <module name="common-test-tool" target="1.8" />
+      <module name="date-and-time-api" target="1.8" />
+      <module name="java8-code-kata" target="1.8" />
+      <module name="stream-api" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/collection-interfaces/collection-interfaces.iml" filepath="$PROJECT_DIR$/collection-interfaces/collection-interfaces.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common-test-tool/common-test-tool.iml" filepath="$PROJECT_DIR$/common-test-tool/common-test-tool.iml" />
+      <module fileurl="file://$PROJECT_DIR$/date-and-time-api/date-and-time-api.iml" filepath="$PROJECT_DIR$/date-and-time-api/date-and-time-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java8-code-kata.iml" filepath="$PROJECT_DIR$/java8-code-kata.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stream-api/stream-api.iml" filepath="$PROJECT_DIR$/stream-api/stream-api.iml" />
+    </modules>
+  </component>
+</project>
