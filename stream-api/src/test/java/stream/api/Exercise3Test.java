@@ -4,11 +4,13 @@ import common.test.tool.annotation.Easy;
 import common.test.tool.dataset.ClassicOnlineStore;
 import common.test.tool.entity.Customer;
 
+import common.test.tool.entity.Item;
 import org.junit.Test;
 
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.function.Function;
 import java.util.stream.Stream;
 
 import static org.hamcrest.Matchers.is;
@@ -23,7 +25,9 @@ public class Exercise3Test extends ClassicOnlineStore {
         /**
          * Count how many items there are in {@link Customer.wantToBuy} using {@link Stream#count}
          */
-        long sum = 0L;
+
+        Function<Customer, Stream<Item>> getItemStream = customer -> customer.getWantToBuy().stream();
+        long sum = customerList.stream().flatMap(getItemStream).count();
 
         assertThat(sum, is(32L));
     }
@@ -36,8 +40,8 @@ public class Exercise3Test extends ClassicOnlineStore {
          * Find the richest customer's budget by using {@link Stream#max} and {@link Comparator#naturalOrder}
          * Don't use {@link Stream#sorted}
          */
-        Comparator<Integer> comparator = null;
-        Optional<Integer> richestCustomer = null;
+        Comparator<Integer> comparator = Comparator.naturalOrder();
+        Optional<Integer> richestCustomer = customerList.stream().map(Customer::getBudget).max(comparator) ;
 
         assertThat(comparator.getClass().getSimpleName(), is("NaturalOrderComparator"));
         assertThat(richestCustomer.get(), is(12000));
@@ -51,8 +55,8 @@ public class Exercise3Test extends ClassicOnlineStore {
          * Find the youngest customer by using {@link Stream#min}
          * Don't use {@link Stream#sorted}
          */
-        Comparator<Customer> comparator = null;
-        Optional<Customer> youngestCustomer = null;
+        Comparator<Customer> comparator = Comparator.comparingInt(Customer::getAge);
+        Optional<Customer> youngestCustomer = customerList.stream().min(comparator);
 
         assertThat(youngestCustomer.get(), is(customerList.get(8)));
     }

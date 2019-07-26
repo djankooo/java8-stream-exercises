@@ -1,6 +1,5 @@
 package collection.interfaces;
 
-import com.sun.deploy.xml.CustomParser;
 import common.test.tool.annotation.Easy;
 import common.test.tool.dataset.ClassicOnlineStore;
 import common.test.tool.entity.Customer;
@@ -12,7 +11,6 @@ import java.util.function.Predicate;
 import java.util.function.UnaryOperator;
 import java.util.stream.Stream;
 
-import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
@@ -93,7 +91,7 @@ public class Exercise1Test extends ClassicOnlineStore {
          * Create a serial {@link Stream} using {@link Collection#stream}
          * You can learn about {@link Stream} APIs at stream-api module.
          */
-        Stream<Object> nameStream = nameList.stream().map(CustomParser::new);
+        Stream<String> nameStream = nameList.stream();
 
         assertThat(nameStream.count(), is(4L));
         assertThat(nameStream.isParallel(), is(false));
@@ -110,7 +108,7 @@ public class Exercise1Test extends ClassicOnlineStore {
          */
 
         // TODO : what is a difference between stream and parallel sream ?
-        Stream<Object> nameParallelStream = nameList.parallelStream().map(CustomParser::new);
+        Stream<String> nameParallelStream = nameList.parallelStream();
 
         assertThat(nameParallelStream.count(), is(4L));
         assertThat(nameParallelStream.isParallel(), is(true));

@@ -2,9 +2,10 @@ package common.test.tool.dataset;
 
 import common.test.tool.entity.OnlineShoppingMall;
 
-import java.io.File;
 
 import javax.xml.bind.JAXB;
+import java.io.File;
+
 
 public class ClassicOnlineStore {
 
