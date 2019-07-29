@@ -65,7 +65,7 @@ public class Exercise5Test extends ClassicOnlineStore {
          * Get the oldest customer by using {@link Collectors#maxBy}.
          * Don't use any intermediate operations.
          */
-        //TODO : daaaaamn, sick shit!
+        // TODO : daaaaamn, sick shit!
         Optional<Customer> oldestCustomer = customerList.stream().collect(Collectors.maxBy(Comparator.comparing(Customer::getAge)));
 
         assertThat(oldestCustomer.get(), is(customerList.get(3)));
@@ -79,7 +79,7 @@ public class Exercise5Test extends ClassicOnlineStore {
          * Create a map of age as key and number of customers as value
          * using {@link Collectors#groupingBy} and {@link Collectors#counting}
          */
-        Map<Integer, Long> ageDistribution = null;
+        Map<Integer, Long> ageDistribution = customerList.stream().collect(Collectors.groupingBy(Customer::getAge,Collectors.counting()));
 
         assertThat(ageDistribution.size(), is(9));
         ageDistribution.forEach((k, v) -> {
